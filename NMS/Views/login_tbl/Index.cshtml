@@ -1,0 +1,46 @@
+﻿@model IEnumerable<NMS.Models.login_tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.login_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.login_password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.staff_tbl.designation)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.login_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.login_password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.staff_tbl.designation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.login_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.login_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.login_id })
+        </td>
+    </tr>
+}
+
+</table>

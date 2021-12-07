@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NadraDbModelStoreContainer" CdmEntityContainer="NadraDbContext">
+    <EntitySetMapping Name="account_tbl">
+      <EntityTypeMapping TypeName="NadraDbModel.account_tbl">
+        <MappingFragment StoreEntitySet="account_tbl">
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="accound_No" ColumnName="accound_No" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="citizen_tbl">
+      <EntityTypeMapping TypeName="NadraDbModel.citizen_tbl">
+        <MappingFragment StoreEntitySet="citizen_tbl">
+          <ScalarProperty Name="Citizen_id" ColumnName="Citizen_id" />
+          <ScalarProperty Name="F_name" ColumnName="F_name" />
+          <ScalarProperty Name="curent_postal_code" ColumnName="curent_postal_code" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="perm_house_no" ColumnName="perm_house_no" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="phone_no" ColumnName="phone_no" />
+          <ScalarProperty Name="Cnic_Id" ColumnName="Cnic_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cnic_info_tbl">
+      <EntityTypeMapping TypeName="NadraDbModel.cnic_info_tbl">
+        <MappingFragment StoreEntitySet="cnic_info_tbl">
+          <ScalarProperty Name="cnic_id" ColumnName="cnic_id" />
+          <ScalarProperty Name="cnic_no" ColumnName="cnic_no" />
+          <ScalarProperty Name="issue_day" ColumnName="issue_day" />
+          <ScalarProperty Name="issue_year" ColumnName="issue_year" />
+          <ScalarProperty Name="issue_month" ColumnName="issue_month" />
+          <ScalarProperty Name="expiry_year" ColumnName="expiry_year" />
+          <ScalarProperty Name="expiry_month" ColumnName="expiry_month" />
+          <ScalarProperty Name="expiry_date" ColumnName="expiry_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoice_tbl">
+      <EntityTypeMapping TypeName="NadraDbModel.invoice_tbl">
+        <MappingFragment StoreEntitySet="invoice_tbl">
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="invoice_no" ColumnName="invoice_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="login_tbl">
+      <EntityTypeMapping TypeName="NadraDbModel.login_tbl">
+        <MappingFragment StoreEntitySet="login_tbl">
+          <ScalarProperty Name="login_id" ColumnName="login_id" />
+          <ScalarProperty Name="login_email" ColumnName="login_email" />
+          <ScalarProperty Name="login_password" ColumnName="login_password" />
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payment_tbl">
+      <EntityTypeMapping TypeName="NadraDbModel.payment_tbl">
+        <MappingFragment StoreEntitySet="payment_tbl">
+          <ScalarProperty Name="Payment_id" ColumnName="Payment_id" />
+          <ScalarProperty Name="charges" ColumnName="charges" />
+          <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+          <ScalarProperty Name="Account_id" ColumnName="Account_id" />
+          <ScalarProperty Name="cnic_id" ColumnName="cnic_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staff_tbl">
+      <EntityTypeMapping TypeName="NadraDbModel.staff_tbl">
+        <MappingFragment StoreEntitySet="staff_tbl">
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="contact_staff" ColumnName="contact_staff" />
+          <ScalarProperty Name="cnic_id" ColumnName="cnic_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ae9ade71faee47a68c41340a984b0de1" Name="Diagram1">
+        <EntityTypeShape EntityType="NadraDbModel.account_tbl" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NadraDbModel.citizen_tbl" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NadraDbModel.cnic_info_tbl" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NadraDbModel.invoice_tbl" Width="1.5" PointX="1.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NadraDbModel.login_tbl" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NadraDbModel.payment_tbl" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NadraDbModel.staff_tbl" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="NadraDbModel.FK__account_t__invoi__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="NadraDbModel.FK__payment_t__Accou__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="NadraDbModel.FK__citizen_t__Cnic___1367E606" ManuallyRouted="false" />
+        <AssociationConnector Association="NadraDbModel.FK__payment_t__cnic___239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="NadraDbModel.FK__staff_tbl__cnic___267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="NadraDbModel.FK__login_tbl__staff__29572725" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
