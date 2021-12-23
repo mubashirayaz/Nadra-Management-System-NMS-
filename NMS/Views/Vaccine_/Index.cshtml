@@ -1,0 +1,71 @@
+﻿@model IEnumerable<NMS.Models.Vaccination_Cif>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.V_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Dose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D1_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.D2_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Health_Center)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Manufacture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Batch_NO_)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.V_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.R_Dose)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D1_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D2_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Health_Center)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Batch_NO_)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Vac_ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Vac_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Vac_ID })
+            </td>
+        </tr>
+    }
+
+</table>

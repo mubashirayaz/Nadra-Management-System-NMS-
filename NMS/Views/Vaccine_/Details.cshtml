@@ -1,0 +1,75 @@
+﻿@model NMS.Models.Vaccination_Cif
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vaccination Cirtificate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.V_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.V_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.R_Dose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.R_Dose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.D1_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.D1_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.D2_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.D2_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Health_Center)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Health_Center)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manufacture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Batch_NO_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Batch_NO_)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Vac_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
