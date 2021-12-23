@@ -1,0 +1,81 @@
+﻿@model NMS.Models.cnic_info_tbl
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>cnic_info_tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cnic_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cnic_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.issue_day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.issue_day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.issue_year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.issue_year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.issue_month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.issue_month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.expiry_year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.expiry_year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.expiry_month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.expiry_month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.expiry_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.expiry_date)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
