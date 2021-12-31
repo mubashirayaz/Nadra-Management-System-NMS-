@@ -1,0 +1,106 @@
+﻿@model NMS.Models.Birth_Cir
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Birth Cirtificate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.A_CNIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.A_CNIC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Relation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Relation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.F_CNIC_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.F_CNIC_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.M_CNIC_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.M_CNIC_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Religion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Religion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.P_Adrs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_Adrs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.District)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.B_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

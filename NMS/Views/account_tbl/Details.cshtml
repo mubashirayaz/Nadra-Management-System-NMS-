@@ -1,0 +1,35 @@
+﻿@model NMS.Models.account_tbl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>account_tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.accound_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accound_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.invoice_tbl.invoice_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.invoice_tbl.invoice_id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.account_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

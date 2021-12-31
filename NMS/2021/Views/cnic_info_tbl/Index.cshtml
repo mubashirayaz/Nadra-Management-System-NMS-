@@ -1,0 +1,70 @@
+﻿@model IEnumerable<NMS.Models.cnic_info_tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cnic_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.issue_day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.issue_year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.issue_month)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.expiry_year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.expiry_month)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.expiry_date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cnic_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.issue_day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.issue_year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.issue_month)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.expiry_year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.expiry_month)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.expiry_date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cnic_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cnic_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cnic_id })
+        </td>
+    </tr>
+}
+
+</table>

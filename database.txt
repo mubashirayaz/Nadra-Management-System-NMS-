@@ -66,17 +66,17 @@ staff_id int foreign key references staff_tbl(staff_id)
 create table Birth_Cir
 (
   B_ID int primary key identity (1,1),
-  Application_CNIC bigint,
+  A_CNIC bigint,
   Relation nvarchar(50)not null,
-  Child_Name nvarchar(200)not null,
-  Father_Name nvarchar(200)not null,
-  Father_CNIC_No bigint not null,
-  Mother_Nmae nvarchar(200)not null,
-  Mother_CNIC_No bigint not null,
+  C_Name nvarchar(200)not null,
+  F_Name nvarchar(200)not null,
+  F_CNIC_No bigint not null,
+  M_Nmae nvarchar(200)not null,
+  M_CNIC_No bigint not null,
   Religion nvarchar(50)not null,
-  Permanent_Address nvarchar(200)not null,
+  PAdr nvarchar(200)not null,
   District nvarchar(100)not null,
-  Date_Of_Birth date not null,
+  DOB date not null,
 )
 select * from Birth_Cir
 select * from cnic_info_tbl
@@ -84,13 +84,13 @@ create table B_Form
 (
   BForm_ID int primary key identity (1,1),
   Gender nvarchar(50)not null,
-  Child_Name nvarchar(200)not null,
-  Father_Name nvarchar(200)not null,
-  Father_CNIC_No bigint not null,
-  Mother_Nmae nvarchar(200)not null,
-  Mother_CNIC_No bigint not null,
+  C_Name nvarchar(200)not null,
+  F_Name nvarchar(200)not null,
+  F_CNIC_No bigint not null,
+  M_Name nvarchar(200)not null,
+  M_CNIC_No bigint not null,
   District nvarchar(100)not null,
-  Date_Of_Birth date not null,
+  DOB date not null,
 )
 select * from B_Form
 
@@ -98,10 +98,10 @@ select * from B_Form
 create table Vaccination_Cif
 (
   Vac_ID int primary key identity (1,1),
-  Vaccine_Name nvarchar(200)not null,
-  Recommended_Dose int not null,
-  Dose1_Date date not null,
-  Dose2_Date date not null,
+  V_Name nvarchar(200)not null,
+  R_Dose int not null,
+  D1_Date date not null,
+  D2_Date date not null,
   Health_Center nvarchar(100)not null,
   Manufacture nvarchar(50)not null,
   Batch_NO# bigint not null,

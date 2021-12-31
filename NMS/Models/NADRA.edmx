@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NadraDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="account_tbl">
+          <Key>
+            <PropertyRef Name="account_id" />
+          </Key>
+          <Property Name="account_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="accound_No" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="invoice_id" Type="int" />
+        </EntityType>
+        <EntityType Name="B_Form">
+          <Key>
+            <PropertyRef Name="BForm_ID" />
+          </Key>
+          <Property Name="BForm_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="C_Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="F_Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="F_CNIC_No" Type="bigint" Nullable="false" />
+          <Property Name="M_Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="M_CNIC_No" Type="bigint" Nullable="false" />
+          <Property Name="District" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Birth_Cir">
+          <Key>
+            <PropertyRef Name="B_ID" />
+          </Key>
+          <Property Name="B_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="A_CNIC" Type="bigint" />
+          <Property Name="Relation" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="C_Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="F_Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="F_CNIC_No" Type="bigint" Nullable="false" />
+          <Property Name="M_Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="M_CNIC_No" Type="bigint" Nullable="false" />
+          <Property Name="Religion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="P_Adrs" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="District" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="citizen_tbl">
+          <Key>
+            <PropertyRef Name="Citizen_id" />
+          </Key>
+          <Property Name="Citizen_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="F_name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="curent_postal_code" Type="int" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="perm_house_no" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="year" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="month" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="date" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="phone_no" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Cnic_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="cnic_info_tbl">
+          <Key>
+            <PropertyRef Name="cnic_id" />
+          </Key>
+          <Property Name="cnic_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cnic_no" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="issue_day" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="issue_year" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="issue_month" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="expiry_year" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="expiry_month" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="expiry_date" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="invoice_tbl">
+          <Key>
+            <PropertyRef Name="invoice_id" />
+          </Key>
+          <Property Name="invoice_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="invoice_no" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="login_tbl">
+          <Key>
+            <PropertyRef Name="login_id" />
+          </Key>
+          <Property Name="login_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="login_email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="login_password" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="staff_id" Type="int" />
+        </EntityType>
+        <EntityType Name="payment_tbl">
+          <Key>
+            <PropertyRef Name="Payment_id" />
+          </Key>
+          <Property Name="Payment_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="charges" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="payment_type" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Account_id" Type="int" />
+          <Property Name="cnic_id" Type="int" />
+        </EntityType>
+        <EntityType Name="staff_tbl">
+          <Key>
+            <PropertyRef Name="staff_id" />
+          </Key>
+          <Property Name="staff_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="designation" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="contact_staff" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="cnic_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Vaccination_Cif">
+          <Key>
+            <PropertyRef Name="Vac_ID" />
+          </Key>
+          <Property Name="Vac_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="V_Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="R_Dose" Type="int" Nullable="false" />
+          <Property Name="Dose1_Date" Type="date" Nullable="false" />
+          <Property Name="Dose2_Date" Type="date" Nullable="false" />
+          <Property Name="Health_Center" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Manufacture" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Batch_NO#" Type="bigint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__account_t__invoi__3E52440B">
+          <End Role="invoice_tbl" Type="Self.invoice_tbl" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="account_tbl" Type="Self.account_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invoice_tbl">
+              <PropertyRef Name="invoice_id" />
+            </Principal>
+            <Dependent Role="account_tbl">
+              <PropertyRef Name="invoice_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__citizen_t__Cnic___398D8EEE">
+          <End Role="cnic_info_tbl" Type="Self.cnic_info_tbl" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="citizen_tbl" Type="Self.citizen_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cnic_info_tbl">
+              <PropertyRef Name="cnic_id" />
+            </Principal>
+            <Dependent Role="citizen_tbl">
+              <PropertyRef Name="Cnic_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__login_tbl__staff__47DBAE45">
+          <End Role="staff_tbl" Type="Self.staff_tbl" Multiplicity="0..1" />
+          <End Role="login_tbl" Type="Self.login_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="staff_tbl">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="login_tbl">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__payment_t__Accou__412EB0B6">
+          <End Role="account_tbl" Type="Self.account_tbl" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="payment_tbl" Type="Self.payment_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="account_tbl">
+              <PropertyRef Name="account_id" />
+            </Principal>
+            <Dependent Role="payment_tbl">
+              <PropertyRef Name="Account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__payment_t__cnic___4222D4EF">
+          <End Role="cnic_info_tbl" Type="Self.cnic_info_tbl" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="payment_tbl" Type="Self.payment_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cnic_info_tbl">
+              <PropertyRef Name="cnic_id" />
+            </Principal>
+            <Dependent Role="payment_tbl">
+              <PropertyRef Name="cnic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__staff_tbl__cnic___44FF419A">
+          <End Role="cnic_info_tbl" Type="Self.cnic_info_tbl" Multiplicity="0..1" />
+          <End Role="staff_tbl" Type="Self.staff_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cnic_info_tbl">
+              <PropertyRef Name="cnic_id" />
+            </Principal>
+            <Dependent Role="staff_tbl">
+              <PropertyRef Name="cnic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NadraDbModelStoreContainer">
+          <EntitySet Name="account_tbl" EntityType="Self.account_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="B_Form" EntityType="Self.B_Form" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Birth_Cir" EntityType="Self.Birth_Cir" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="citizen_tbl" EntityType="Self.citizen_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cnic_info_tbl" EntityType="Self.cnic_info_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="invoice_tbl" EntityType="Self.invoice_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login_tbl" EntityType="Self.login_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="payment_tbl" EntityType="Self.payment_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="staff_tbl" EntityType="Self.staff_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vaccination_Cif" EntityType="Self.Vaccination_Cif" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__account_t__invoi__3E52440B" Association="Self.FK__account_t__invoi__3E52440B">
+            <End Role="invoice_tbl" EntitySet="invoice_tbl" />
+            <End Role="account_tbl" EntitySet="account_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__citizen_t__Cnic___398D8EEE" Association="Self.FK__citizen_t__Cnic___398D8EEE">
+            <End Role="cnic_info_tbl" EntitySet="cnic_info_tbl" />
+            <End Role="citizen_tbl" EntitySet="citizen_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__login_tbl__staff__47DBAE45" Association="Self.FK__login_tbl__staff__47DBAE45">
+            <End Role="staff_tbl" EntitySet="staff_tbl" />
+            <End Role="login_tbl" EntitySet="login_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__payment_t__Accou__412EB0B6" Association="Self.FK__payment_t__Accou__412EB0B6">
+            <End Role="account_tbl" EntitySet="account_tbl" />
+            <End Role="payment_tbl" EntitySet="payment_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__payment_t__cnic___4222D4EF" Association="Self.FK__payment_t__cnic___4222D4EF">
+            <End Role="cnic_info_tbl" EntitySet="cnic_info_tbl" />
+            <End Role="payment_tbl" EntitySet="payment_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__staff_tbl__cnic___44FF419A" Association="Self.FK__staff_tbl__cnic___44FF419A">
+            <End Role="cnic_info_tbl" EntitySet="cnic_info_tbl" />
+            <End Role="staff_tbl" EntitySet="staff_tbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NadraDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="account_tbl">
+          <Key>
+            <PropertyRef Name="account_id" />
+          </Key>
+          <Property Name="account_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="accound_No" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="invoice_id" Type="Int32" />
+          <NavigationProperty Name="invoice_tbl" Relationship="Self.FK__account_t__invoi__3E52440B" FromRole="account_tbl" ToRole="invoice_tbl" />
+          <NavigationProperty Name="payment_tbl" Relationship="Self.FK__payment_t__Accou__412EB0B6" FromRole="account_tbl" ToRole="payment_tbl" />
+        </EntityType>
+        <EntityType Name="B_Form">
+          <Key>
+            <PropertyRef Name="BForm_ID" />
+          </Key>
+          <Property Name="BForm_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="C_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="F_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="F_CNIC_No" Type="Int64" Nullable="false" />
+          <Property Name="M_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_CNIC_No" Type="Int64" Nullable="false" />
+          <Property Name="District" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Birth_Cir">
+          <Key>
+            <PropertyRef Name="B_ID" />
+          </Key>
+          <Property Name="B_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="A_CNIC" Type="Int64" />
+          <Property Name="Relation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="C_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="F_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="F_CNIC_No" Type="Int64" Nullable="false" />
+          <Property Name="M_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="M_CNIC_No" Type="Int64" Nullable="false" />
+          <Property Name="Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="P_Adrs" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="District" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="citizen_tbl">
+          <Key>
+            <PropertyRef Name="Citizen_id" />
+          </Key>
+          <Property Name="Citizen_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="F_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="curent_postal_code" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="perm_house_no" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="year" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="month" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone_no" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cnic_Id" Type="Int32" />
+          <NavigationProperty Name="cnic_info_tbl" Relationship="Self.FK__citizen_t__Cnic___398D8EEE" FromRole="citizen_tbl" ToRole="cnic_info_tbl" />
+        </EntityType>
+        <EntityType Name="cnic_info_tbl">
+          <Key>
+            <PropertyRef Name="cnic_id" />
+          </Key>
+          <Property Name="cnic_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cnic_no" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="issue_day" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="issue_year" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="issue_month" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="expiry_year" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="expiry_month" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="expiry_date" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="citizen_tbl" Relationship="Self.FK__citizen_t__Cnic___398D8EEE" FromRole="cnic_info_tbl" ToRole="citizen_tbl" />
+          <NavigationProperty Name="payment_tbl" Relationship="Self.FK__payment_t__cnic___4222D4EF" FromRole="cnic_info_tbl" ToRole="payment_tbl" />
+          <NavigationProperty Name="staff_tbl" Relationship="Self.FK__staff_tbl__cnic___44FF419A" FromRole="cnic_info_tbl" ToRole="staff_tbl" />
+        </EntityType>
+        <EntityType Name="invoice_tbl">
+          <Key>
+            <PropertyRef Name="invoice_id" />
+          </Key>
+          <Property Name="invoice_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="invoice_no" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="account_tbl" Relationship="Self.FK__account_t__invoi__3E52440B" FromRole="invoice_tbl" ToRole="account_tbl" />
+        </EntityType>
+        <EntityType Name="login_tbl">
+          <Key>
+            <PropertyRef Name="login_id" />
+          </Key>
+          <Property Name="login_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login_email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="login_password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="staff_id" Type="Int32" />
+          <NavigationProperty Name="staff_tbl" Relationship="Self.FK__login_tbl__staff__47DBAE45" FromRole="login_tbl" ToRole="staff_tbl" />
+        </EntityType>
+        <EntityType Name="payment_tbl">
+          <Key>
+            <PropertyRef Name="Payment_id" />
+          </Key>
+          <Property Name="Payment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="charges" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="payment_type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Account_id" Type="Int32" />
+          <Property Name="cnic_id" Type="Int32" />
+          <NavigationProperty Name="account_tbl" Relationship="Self.FK__payment_t__Accou__412EB0B6" FromRole="payment_tbl" ToRole="account_tbl" />
+          <NavigationProperty Name="cnic_info_tbl" Relationship="Self.FK__payment_t__cnic___4222D4EF" FromRole="payment_tbl" ToRole="cnic_info_tbl" />
+        </EntityType>
+        <EntityType Name="staff_tbl">
+          <Key>
+            <PropertyRef Name="staff_id" />
+          </Key>
+          <Property Name="staff_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="designation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contact_staff" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cnic_id" Type="Int32" />
+          <NavigationProperty Name="cnic_info_tbl" Relationship="Self.FK__staff_tbl__cnic___44FF419A" FromRole="staff_tbl" ToRole="cnic_info_tbl" />
+          <NavigationProperty Name="login_tbl" Relationship="Self.FK__login_tbl__staff__47DBAE45" FromRole="staff_tbl" ToRole="login_tbl" />
+        </EntityType>
+        <EntityType Name="Vaccination_Cif">
+          <Key>
+            <PropertyRef Name="Vac_ID" />
+          </Key>
+          <Property Name="Vac_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="V_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="R_Dose" Type="Int32" Nullable="false" />
+          <Property Name="Dose1_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Dose2_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Health_Center" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Manufacture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Batch_NO_" Type="Int64" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__account_t__invoi__3E52440B">
+          <End Role="invoice_tbl" Type="Self.invoice_tbl" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="account_tbl" Type="Self.account_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invoice_tbl">
+              <PropertyRef Name="invoice_id" />
+            </Principal>
+            <Dependent Role="account_tbl">
+              <PropertyRef Name="invoice_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__payment_t__Accou__412EB0B6">
+          <End Role="account_tbl" Type="Self.account_tbl" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="payment_tbl" Type="Self.payment_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="account_tbl">
+              <PropertyRef Name="account_id" />
+            </Principal>
+            <Dependent Role="payment_tbl">
+              <PropertyRef Name="Account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__citizen_t__Cnic___398D8EEE">
+          <End Role="cnic_info_tbl" Type="Self.cnic_info_tbl" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="citizen_tbl" Type="Self.citizen_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cnic_info_tbl">
+              <PropertyRef Name="cnic_id" />
+            </Principal>
+            <Dependent Role="citizen_tbl">
+              <PropertyRef Name="Cnic_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__payment_t__cnic___4222D4EF">
+          <End Role="cnic_info_tbl" Type="Self.cnic_info_tbl" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="payment_tbl" Type="Self.payment_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cnic_info_tbl">
+              <PropertyRef Name="cnic_id" />
+            </Principal>
+            <Dependent Role="payment_tbl">
+              <PropertyRef Name="cnic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__staff_tbl__cnic___44FF419A">
+          <End Role="cnic_info_tbl" Type="Self.cnic_info_tbl" Multiplicity="0..1" />
+          <End Role="staff_tbl" Type="Self.staff_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cnic_info_tbl">
+              <PropertyRef Name="cnic_id" />
+            </Principal>
+            <Dependent Role="staff_tbl">
+              <PropertyRef Name="cnic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__login_tbl__staff__47DBAE45">
+          <End Role="staff_tbl" Type="Self.staff_tbl" Multiplicity="0..1" />
+          <End Role="login_tbl" Type="Self.login_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="staff_tbl">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="login_tbl">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NadraDbEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="account_tbl" EntityType="Self.account_tbl" />
+          <EntitySet Name="B_Form" EntityType="Self.B_Form" />
+          <EntitySet Name="Birth_Cir" EntityType="Self.Birth_Cir" />
+          <EntitySet Name="citizen_tbl" EntityType="Self.citizen_tbl" />
+          <EntitySet Name="cnic_info_tbl" EntityType="Self.cnic_info_tbl" />
+          <EntitySet Name="invoice_tbl" EntityType="Self.invoice_tbl" />
+          <EntitySet Name="login_tbl" EntityType="Self.login_tbl" />
+          <EntitySet Name="payment_tbl" EntityType="Self.payment_tbl" />
+          <EntitySet Name="staff_tbl" EntityType="Self.staff_tbl" />
+          <EntitySet Name="Vaccination_Cif" EntityType="Self.Vaccination_Cif" />
+          <AssociationSet Name="FK__account_t__invoi__3E52440B" Association="Self.FK__account_t__invoi__3E52440B">
+            <End Role="invoice_tbl" EntitySet="invoice_tbl" />
+            <End Role="account_tbl" EntitySet="account_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__payment_t__Accou__412EB0B6" Association="Self.FK__payment_t__Accou__412EB0B6">
+            <End Role="account_tbl" EntitySet="account_tbl" />
+            <End Role="payment_tbl" EntitySet="payment_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__citizen_t__Cnic___398D8EEE" Association="Self.FK__citizen_t__Cnic___398D8EEE">
+            <End Role="cnic_info_tbl" EntitySet="cnic_info_tbl" />
+            <End Role="citizen_tbl" EntitySet="citizen_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__payment_t__cnic___4222D4EF" Association="Self.FK__payment_t__cnic___4222D4EF">
+            <End Role="cnic_info_tbl" EntitySet="cnic_info_tbl" />
+            <End Role="payment_tbl" EntitySet="payment_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__staff_tbl__cnic___44FF419A" Association="Self.FK__staff_tbl__cnic___44FF419A">
+            <End Role="cnic_info_tbl" EntitySet="cnic_info_tbl" />
+            <End Role="staff_tbl" EntitySet="staff_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK__login_tbl__staff__47DBAE45" Association="Self.FK__login_tbl__staff__47DBAE45">
+            <End Role="staff_tbl" EntitySet="staff_tbl" />
+            <End Role="login_tbl" EntitySet="login_tbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NadraDbModelStoreContainer" CdmEntityContainer="NadraDbEntities3">
+          <EntitySetMapping Name="account_tbl">
+            <EntityTypeMapping TypeName="NadraDbModel.account_tbl">
+              <MappingFragment StoreEntitySet="account_tbl">
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="accound_No" ColumnName="accound_No" />
+                <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="B_Form">
+            <EntityTypeMapping TypeName="NadraDbModel.B_Form">
+              <MappingFragment StoreEntitySet="B_Form">
+                <ScalarProperty Name="BForm_ID" ColumnName="BForm_ID" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="C_Name" ColumnName="C_Name" />
+                <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+                <ScalarProperty Name="F_CNIC_No" ColumnName="F_CNIC_No" />
+                <ScalarProperty Name="M_Name" ColumnName="M_Name" />
+                <ScalarProperty Name="M_CNIC_No" ColumnName="M_CNIC_No" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Birth_Cir">
+            <EntityTypeMapping TypeName="NadraDbModel.Birth_Cir">
+              <MappingFragment StoreEntitySet="Birth_Cir">
+                <ScalarProperty Name="B_ID" ColumnName="B_ID" />
+                <ScalarProperty Name="A_CNIC" ColumnName="A_CNIC" />
+                <ScalarProperty Name="Relation" ColumnName="Relation" />
+                <ScalarProperty Name="C_Name" ColumnName="C_Name" />
+                <ScalarProperty Name="F_Name" ColumnName="F_Name" />
+                <ScalarProperty Name="F_CNIC_No" ColumnName="F_CNIC_No" />
+                <ScalarProperty Name="M_Name" ColumnName="M_Name" />
+                <ScalarProperty Name="M_CNIC_No" ColumnName="M_CNIC_No" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="P_Adrs" ColumnName="P_Adrs" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="citizen_tbl">
+            <EntityTypeMapping TypeName="NadraDbModel.citizen_tbl">
+              <MappingFragment StoreEntitySet="citizen_tbl">
+                <ScalarProperty Name="Citizen_id" ColumnName="Citizen_id" />
+                <ScalarProperty Name="F_name" ColumnName="F_name" />
+                <ScalarProperty Name="curent_postal_code" ColumnName="curent_postal_code" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="perm_house_no" ColumnName="perm_house_no" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="phone_no" ColumnName="phone_no" />
+                <ScalarProperty Name="Cnic_Id" ColumnName="Cnic_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cnic_info_tbl">
+            <EntityTypeMapping TypeName="NadraDbModel.cnic_info_tbl">
+              <MappingFragment StoreEntitySet="cnic_info_tbl">
+                <ScalarProperty Name="cnic_id" ColumnName="cnic_id" />
+                <ScalarProperty Name="cnic_no" ColumnName="cnic_no" />
+                <ScalarProperty Name="issue_day" ColumnName="issue_day" />
+                <ScalarProperty Name="issue_year" ColumnName="issue_year" />
+                <ScalarProperty Name="issue_month" ColumnName="issue_month" />
+                <ScalarProperty Name="expiry_year" ColumnName="expiry_year" />
+                <ScalarProperty Name="expiry_month" ColumnName="expiry_month" />
+                <ScalarProperty Name="expiry_date" ColumnName="expiry_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoice_tbl">
+            <EntityTypeMapping TypeName="NadraDbModel.invoice_tbl">
+              <MappingFragment StoreEntitySet="invoice_tbl">
+                <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+                <ScalarProperty Name="invoice_no" ColumnName="invoice_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login_tbl">
+            <EntityTypeMapping TypeName="NadraDbModel.login_tbl">
+              <MappingFragment StoreEntitySet="login_tbl">
+                <ScalarProperty Name="login_id" ColumnName="login_id" />
+                <ScalarProperty Name="login_email" ColumnName="login_email" />
+                <ScalarProperty Name="login_password" ColumnName="login_password" />
+                <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="payment_tbl">
+            <EntityTypeMapping TypeName="NadraDbModel.payment_tbl">
+              <MappingFragment StoreEntitySet="payment_tbl">
+                <ScalarProperty Name="Payment_id" ColumnName="Payment_id" />
+                <ScalarProperty Name="charges" ColumnName="charges" />
+                <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+                <ScalarProperty Name="Account_id" ColumnName="Account_id" />
+                <ScalarProperty Name="cnic_id" ColumnName="cnic_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="staff_tbl">
+            <EntityTypeMapping TypeName="NadraDbModel.staff_tbl">
+              <MappingFragment StoreEntitySet="staff_tbl">
+                <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+                <ScalarProperty Name="contact_staff" ColumnName="contact_staff" />
+                <ScalarProperty Name="cnic_id" ColumnName="cnic_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vaccination_Cif">
+            <EntityTypeMapping TypeName="NadraDbModel.Vaccination_Cif">
+              <MappingFragment StoreEntitySet="Vaccination_Cif">
+                <ScalarProperty Name="Vac_ID" ColumnName="Vac_ID" />
+                <ScalarProperty Name="V_Name" ColumnName="V_Name" />
+                <ScalarProperty Name="R_Dose" ColumnName="R_Dose" />
+                <ScalarProperty Name="Dose1_Date" ColumnName="Dose1_Date" />
+                <ScalarProperty Name="Dose2_Date" ColumnName="Dose2_Date" />
+                <ScalarProperty Name="Health_Center" ColumnName="Health_Center" />
+                <ScalarProperty Name="Manufacture" ColumnName="Manufacture" />
+                <ScalarProperty Name="Batch_NO_" ColumnName="Batch_NO#" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

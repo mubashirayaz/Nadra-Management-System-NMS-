@@ -1,0 +1,51 @@
+﻿@model NMS.Models.payment_tbl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>payment_tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.charges)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.charges)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.payment_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.payment_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.account_tbl.accound_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.account_tbl.accound_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cnic_info_tbl.cnic_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cnic_info_tbl.cnic_no)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Payment_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

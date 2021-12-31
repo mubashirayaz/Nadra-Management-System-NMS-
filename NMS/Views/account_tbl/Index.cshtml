@@ -1,0 +1,40 @@
+﻿@model IEnumerable<NMS.Models.account_tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.accound_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.invoice_tbl.invoice_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.accound_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.invoice_tbl.invoice_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.account_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.account_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.account_id })
+        </td>
+    </tr>
+}
+
+</table>

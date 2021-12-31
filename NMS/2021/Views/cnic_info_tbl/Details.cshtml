@@ -1,0 +1,75 @@
+﻿@model NMS.Models.cnic_info_tbl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>cnic_info_tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cnic_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cnic_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.issue_day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.issue_day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.issue_year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.issue_year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.issue_month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.issue_month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.expiry_year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.expiry_year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.expiry_month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.expiry_month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.expiry_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.expiry_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.cnic_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

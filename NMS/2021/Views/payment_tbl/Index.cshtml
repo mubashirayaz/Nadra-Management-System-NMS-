@@ -1,0 +1,52 @@
+﻿@model IEnumerable<NMS.Models.payment_tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.charges)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.payment_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.account_tbl.accound_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cnic_info_tbl.cnic_no)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.charges)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.payment_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.account_tbl.accound_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cnic_info_tbl.cnic_no)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Payment_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Payment_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Payment_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<NMS.Models.staff_tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contact_staff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cnic_info_tbl.cnic_no)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.designation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contact_staff)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cnic_info_tbl.cnic_no)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.staff_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.staff_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.staff_id })
+        </td>
+    </tr>
+}
+
+</table>
